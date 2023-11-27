@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/dumia16/final-team-project-node-server-app/issues"
   },
-  "homepage": "https://github.com/dumia16/final-team-project-node-server-app#readme"
+  "homepage": "https://github.com/dumia16/final-team-project-node-server-app#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
