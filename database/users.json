@@ -32,7 +32,7 @@
   "lastName": "Undómiel",
   "email": "arwen@rivendell.com",
   "dob": "241-03-01",
-  "role": "FACULTY"
+  "role": "BUSINESS ANALYST"
 },
 {
   "_id": {
@@ -44,7 +44,7 @@
   "lastName": "N/A",
   "email": "galadriel@lothlorien.com",
   "dob": "Years of the Trees",
-  "role": "FACULTY"
+  "role": "BUSINESS ANALYST"
 },
 {
   "_id": {
@@ -56,7 +56,7 @@
   "lastName": "Stark",
   "email": "tony@stark.com",
   "dob": "1970-05-29",
-  "role": "STUDENT"
+  "role": "BUSINESS ANALYST"
 },
 {
   "_id": {
@@ -68,7 +68,7 @@
   "lastName": "Wayne",
   "email": "bruce@wayne.com",
   "dob": "1972-02-19",
-  "role": "STUDENT"
+  "role": "BUSINESS ANALYST"
 },
 {
   "_id": {
@@ -80,7 +80,7 @@
   "lastName": "Rogers",
   "email": "steve@avengers.com",
   "dob": "1918-07-04",
-  "role": "STUDENT"
+  "role": "BUSINESS ANALYST"
 },
 {
   "_id": {
@@ -92,7 +92,7 @@
   "lastName": "Romanoff",
   "email": "natasha@avengers.com",
   "dob": "1984-11-22",
-  "role": "STUDENT"
+  "role": "FOODIE"
 },
 {
   "_id": {
@@ -104,7 +104,7 @@
   "lastName": "Odinson",
   "email": "thor@asgard.com",
   "dob": "982-05-25",
-  "role": "STUDENT"
+  "role": "FOODIE"
 },
 {
   "_id": {
@@ -116,7 +116,7 @@
   "lastName": "Banner",
   "email": "bruce@avengers.com",
   "dob": "1969-12-18",
-  "role": "STUDENT"
+  "role": "FOODIE"
 },
 {
   "_id": {
@@ -128,7 +128,7 @@
   "lastName": "Baggins",
   "email": "frodo@shire.com",
   "dob": "1368-09-22",
-  "role": "FACULTY"
+  "role": "FOODIE"
 },
 {
   "_id": {
@@ -140,7 +140,7 @@
   "lastName": "Elessar",
   "email": "aragorn@gondor.com",
   "dob": "2931-03-01",
-  "role": "FACULTY"
+  "role": "FOODIE"
 },
 {
   "_id": {
@@ -152,7 +152,7 @@
   "lastName": "Greenleaf",
   "email": "legolas@mirkwood.com",
   "dob": "2879-07-15",
-  "role": "FACULTY"
+  "role": "FOODIE"
 },
 {
   "_id": {
@@ -164,7 +164,7 @@
   "lastName": "Pandava",
   "email": "arjuna@hastinapura.com",
   "dob": "unknown",
-  "role": "STUDENT"
+  "role": "FOODIE"
 },
 {
   "_id": {
@@ -176,7 +176,7 @@
   "lastName": "Janak",
   "email": "sita@mithila.com",
   "dob": "unknown",
-  "role": "STUDENT"
+  "role": "FOODIE"
 },
 {
   "_id": {
@@ -188,7 +188,7 @@
   "lastName": "Pandava",
   "email": "bhima@hastinapura.com",
   "dob": "unknown",
-  "role": "STUDENT"
+  "role": "FOODIE"
 },
 {
   "_id": {
@@ -200,7 +200,7 @@
   "lastName": "Panchal",
   "email": "draupadi@panchala.com",
   "dob": "unknown",
-  "role": "STUDENT"
+  "role": "FOODIE"
 },
 {
   "_id": {
@@ -212,7 +212,7 @@
   "lastName": "Yadava",
   "email": "krishna@dwaraka.com",
   "dob": "unknown",
-  "role": "FACULTY"
+  "role": "FOODIE"
 },
 {
   "_id": {
@@ -224,7 +224,7 @@
   "lastName": "Wukong",
   "email": "wukong@mountHuaguo.com",
   "dob": "unknown",
-  "role": "STUDENT"
+  "role": "FOODIE"
 },
 {
   "_id": {
@@ -236,7 +236,7 @@
   "lastName": "E",
   "email": "change@moonpalace.com",
   "dob": "unknown",
-  "role": "STUDENT"
+  "role": "FOODIE"
 },
 {
   "_id": {
@@ -248,7 +248,7 @@
   "lastName": "N/A",
   "email": "nezha@chalai.com",
   "dob": "unknown",
-  "role": "STUDENT"
+  "role": "FOODIE"
 },
 {
   "_id": {
@@ -260,7 +260,7 @@
   "lastName": "Yu",
   "email": "guanyu@shu.com",
   "dob": "unknown",
-  "role": "STUDENT"
+  "role": "FOODIE"
 },
 {
   "_id": {
@@ -272,7 +272,7 @@
   "lastName": "the Great",
   "email": "yu@xiaDynasty.com",
   "dob": "unknown",
-  "role": "FACULTY"
+  "role": "FOODIE"
 },
 {
   "_id": {
@@ -284,7 +284,7 @@
   "lastName": "N/A",
   "email": "aladdin@arabianNights.com",
   "dob": "unknown",
-  "role": "STUDENT"
+  "role": "FOODIE"
 },
 {
   "_id": {
@@ -296,7 +296,7 @@
   "lastName": "N/A",
   "email": "scheherazade@persia.com",
   "dob": "unknown",
-  "role": "STUDENT"
+  "role": "FOODIE"
 },
 {
   "_id": {
@@ -308,7 +308,7 @@
   "lastName": "the Sailor",
   "email": "sinbad@sailorAdventures.com",
   "dob": "unknown",
-  "role": "STUDENT"
+  "role": "FOODIE"
 },
 {
   "_id": {
@@ -320,7 +320,7 @@
   "lastName": "Baba",
   "email": "aliBaba@thieves.com",
   "dob": "unknown",
-  "role": "STUDENT"
+  "role": "FOODIE"
 },
 {
   "_id": {
@@ -332,7 +332,7 @@
   "lastName": "N/A",
   "email": "khidr@eternalWisdom.com",
   "dob": "unknown",
-  "role": "FACULTY"
+  "role": "FOODIE"
 },
 {
   "_id": {
@@ -344,7 +344,7 @@
   "lastName": "Archangel",
   "email": "michael@heavensrealm.com",
   "dob": "unknown",
-  "role": "STUDENT"
+  "role": "FOODIE"
 },
 {
   "_id": {
@@ -356,7 +356,7 @@
   "lastName": "Archangel",
   "email": "gabriel@heavensmail.com",
   "dob": "unknown",
-  "role": "STUDENT"
+  "role": "FOODIE"
 },
 {
   "_id": {
@@ -368,7 +368,7 @@
   "lastName": "N/A",
   "email": "moses@exodus.com",
   "dob": "unknown",
-  "role": "STUDENT"
+  "role": "FOODIE"
 },
 {
   "_id": {
@@ -380,7 +380,7 @@
   "lastName": "N/A",
   "email": "david@israelkingdom.com",
   "dob": "unknown",
-  "role": "STUDENT"
+  "role": "FOODIE"
 },
 {
   "_id": {
@@ -392,5 +392,5 @@
   "lastName": "Saint",
   "email": "peter@pearlygates.com",
   "dob": "unknown",
-  "role": "FACULTY"
+  "role": "FOODIE"
 }]
