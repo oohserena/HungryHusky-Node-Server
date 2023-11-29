@@ -20,9 +20,26 @@ function UserRoutes(app) {
     res.json(status);
   };
 
+  const login = async (req, res) => {
+    try {
+      const { email, password } = req.body;
+      const currentUser = await dao.findUserByCredentials(email, password);
+      if (currentUser) {
+        req.session['currentUser'] = currentUser;
+        res.json(currentUser);
+      } else {
+        res.status(401).json({ message: 'Invalid credentials' });
+      }
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Internal server error' });
+    }
+  };
+
   app.get("/api/users", findAllUsers);
   app.get("/api/users/:userId", findUserById);
   app.put("/api/users/:userId", updateUser);
+  app.post("/api/users", login);
 }
 
 export default UserRoutes;
