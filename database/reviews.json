@@ -1,0 +1,69 @@
+[
+    {
+      
+      "user_id": "65580756fed6bb3b501c55f2",
+      "restaurant_id": "res12345",
+      "content": "Fantastic restaurant, delicious food, and excellent service.",
+      "createdAt": "2021-06-15"
+    },
+    {
+      "user_id": "654f9ec2ea7ead465908d1e3",
+      "restaurant_id": "res12346",
+      "content": "Nice ambiance, but the food is average.",
+      "createdAt": "2019-04-20"
+    },
+    {
+      "user_id": "654ffdd3870c092d5441bc88",
+      "restaurant_id": "res12347",
+      "content": "Reasonably priced, great for family dining.",
+      "createdAt": "2022-08-11"
+    },
+    {
+      "user_id": "654ff586ea7ead465908d1e5",
+      "restaurant_id": "res12347",
+      "content": "Reasonably priced, great for family dining.",
+      "createdAt": "2022-08-11"
+    },
+    {
+      "user_id": "654ffdd3870c092d5441bc89",
+      "restaurant_id": "res12348",
+      "content": "Incredible vegan options, friendly staff.",
+      "createdAt": "2020-07-22"
+    },
+    {
+      "user_id": "654ffdd3870c092d5441bc8b",
+      "restaurant_id": "res12349",
+      "content": "Cozy atmosphere, but the wait times are long.",
+      "createdAt": "2021-11-09"
+    },
+    {
+      "user_id": "654ffdd3870c092d5441bc8c",
+      "restaurant_id": "res12350",
+      "content": "Exquisite cuisine, a bit pricey but worth it.",
+      "createdAt": "2019-03-15"
+    },
+    {
+      "user_id": "654ffdd3870c092d5441bc8f",
+      "restaurant_id": "res12351",
+      "content": "Not very clean, food was mediocre.",
+      "createdAt": "2023-01-20"
+    },
+    {
+      "user_id": "654fff58ea7ead465908d1e7",
+      "restaurant_id": "res12352",
+      "content": "Great location, average food.",
+      "createdAt": "2018-06-07"
+    },
+    {
+      "user_id": "65500001ea7ead465908d1ed",
+      "restaurant_id": "res12353",
+      "content": "Friendly service, but disappointing desserts.",
+      "createdAt": "2022-05-18"
+    },
+    {
+      "user_id": "6550000bea7ead465908d1ee",
+      "restaurant_id": "res12354",
+      "content": "Quick service and tasty appetizers.",
+      "createdAt": "2020-09-29"
+    }
+  ]

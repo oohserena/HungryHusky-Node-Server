@@ -1,0 +1,52 @@
+[
+  {
+    "user_id": "654ffff6ea7ead465908d1ec",
+    "restaurant_id": "res98765",
+    "createdAt": "2021-05-15"
+  },
+  {
+    "user_id": "65500001ea7ead465908d1ed",
+    "restaurant_id": "res98766",
+    "createdAt": "2022-03-21"
+  },
+  {
+    "user_id": "6550000bea7ead465908d1ee",
+    "restaurant_id": "res98767",
+    "createdAt": "2020-11-07"
+  },
+  {
+    "user_id": "6550007bea7ead465908d1f1",
+    "restaurant_id": "res98768",
+    "createdAt": "2019-07-04"
+  },
+  {
+    "user_id": "65500086ea7ead465908d1f2",
+    "restaurant_id": "res98769",
+    "createdAt": "2023-01-20"
+  },
+  {
+    "user_id": "6550009aea7ead465908d1f4",
+    "restaurant_id": "res98770",
+    "createdAt": "2018-06-14"
+  },
+  {
+    "user_id": "655000a4ea7ead465908d1f5",
+    "restaurant_id": "res98771",
+    "createdAt": "2022-08-22"
+  },
+  {
+    "user_id": "655000f7ea7ead465908d1f7",
+    "restaurant_id": "res98772",
+    "createdAt": "2021-04-30"
+  },
+  {
+    "user_id": "65500111ea7ead465908d1fa",
+    "restaurant_id": "res98773",
+    "createdAt": "2019-09-12"
+  },
+  {
+    "user_id": "654ffdd3870c092d5441bc8a",
+    "restaurant_id": "res98774",
+    "createdAt": "2020-02-29"
+  }
+]
