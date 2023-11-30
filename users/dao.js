@@ -9,6 +9,8 @@ export const findUserByUsername = (username) =>
   model.findOne({ username: username });
 export const findUserByCredentials = (email, password) =>
   model.findOne({ email, password });
+export const findUserByEmail = (email) =>
+  model.findOne({ email: email });
 export const findUsersByRole = (role) => model.find({ role: role });
 export const createUser = (user) => model.create(user);
 export const updateUser = (id, user) =>
