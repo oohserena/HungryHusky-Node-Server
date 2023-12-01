@@ -49,11 +49,22 @@ function UserRoutes(app) {
     }
   };
 
+  const logout = (req, res) => {
+    try {
+      req.session.destroy();
+      res.status(200).json({ message: 'Successfully signed out.' });
+    } catch (error) {
+      console.error('Sign out error:', error);
+      res.status(500).json({ error: 'An error occurred during sign out.' });
+    }
+  };
+
   app.get("/api/users", findAllUsers);
   app.get("/api/users/:userId", findUserById);
   app.put("/api/users/:userId", updateUser);
   app.post("/api/users", register);
   app.post("/api/users", login);
+  app.post("/api/users", logout);
 
 }
 
