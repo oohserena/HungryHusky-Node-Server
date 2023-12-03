@@ -27,6 +27,7 @@ function UserRoutes(app) {
           return res.status(400).json({ message: "Email already taken, please log in" });
         }
         const currentUser = await dao.createUser(req.body);
+        req.session['currentUser'] = currentUser;
         res.json(currentUser);
     } catch (error) {
       res.status(500).json({ error: 'An error occurred while creating the user.'});
@@ -59,12 +60,22 @@ function UserRoutes(app) {
     }
   };
 
+  const account = async (req, res) => {
+    const currentUser = req.session["currentUser"];
+    // if (!currentUser) {
+    //   res.sendStatus(403);
+    //   return;
+    // }
+    res.json(currentUser);
+  };
+
   app.get("/api/users", findAllUsers);
   app.get("/api/users/:userId", findUserById);
   app.put("/api/users/:userId", updateUser);
-  app.post("/api/users", register);
-  app.post("/api/users", login);
+  app.post("/api/users/register", register);
+  app.post("/api/users/login", login);
   app.post("/api/users", logout);
+  app.post("/api/users/profile", account);
 
 }
 
