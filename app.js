@@ -4,6 +4,7 @@ import cors from "cors";
 import mongoose from "mongoose";
 import session from "express-session";
 import UserRoutes from "./users/routes.js";
+import SearchRoutes from "./search/routes.js";
 
 // mongoose.connect("mongodb://127.0.0.1:27017/kanbas");
 const CONNECTION_STRING =
@@ -37,4 +38,6 @@ app.use(session(sessionOptions));
 app.use(express.json());
 
 UserRoutes(app);
+SearchRoutes(app);
+
 app.listen(process.env.PORT || 4000);
