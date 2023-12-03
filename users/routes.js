@@ -7,9 +7,13 @@ function UserRoutes(app) {
   };
 
   const findUserById = async (req, res) => {
-    const { userId } = req.params;
-    const user = await dao.findUserById(userId);
-    res.json(user);
+    try {
+      const { userId } = req.params;
+      const user = await dao.findUserById(userId);
+      res.json(user);
+    } catch (error) {
+      res.status(404).json({ error: "User not found" });
+    }
   };
 
   const updateUser = async (req, res) => {
