@@ -1,4 +1,5 @@
 import model from "./model.js";
+import mongoose from "mongoose";
 
 export const findAllUsers = () => model.find();
 // export const findUserById = (userId) => model.findById(userId);
@@ -16,3 +17,27 @@ export const createUser = (user) => model.create(user);
 export const updateUser = (id, user) =>
   model.updateOne({ _id: id }, { $set: user });
 export const deleteUser = (id) => model.deleteOne({ _id: id });
+export const addToUserReviews = (userId, reviewId) => {
+  return model.updateOne(
+    { _id: userId},
+    { $push: { review_ids: new mongoose.Types.ObjectId(reviewId)}}
+  );
+};
+export const removeFromUserReviews = (userId, reviewId) => {
+  return model.updateOne(
+    {_id: userId},
+    { $pull: { review_ids: reviewId }}
+  )
+};
+export const addToUserFavorites = (userId, favoritedId) => {
+  return model.updateOne(
+      { _id: userId}, 
+      { $push: { favorite_ids: new mongoose.Types.ObjectId(favoritedId)}}
+  );
+};
+export const removeFromUserFavorites = (userId, favoriteId) => {
+  return model.updateOne(
+      {_id: userId}, 
+      { $pull: { favorite_ids: favoriteId }}
+  );
+};
