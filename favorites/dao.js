@@ -4,6 +4,7 @@ import favoriteModel from "./model.js";
 
 export const createFavorite = (favoriteData) => favoriteModel.create(favoriteData);
 export const deleteFavorite = (id) => favoriteModel.deleteOne({ _id: id });
+export const findFavoriteById = (id) => favoriteModel.findById(id); 
 export const findFavoriteByUserId = (userId) => {
     return favoriteModel.find({ user_id: userId })
         .then(favorites => favorites)

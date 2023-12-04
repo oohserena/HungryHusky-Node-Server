@@ -22,20 +22,16 @@ function FavoritesRoutes(app) {
 
     const deleteFavorite = async (req, res) => {
         try {
-            const { id } = req.params; // ID of the favorite to delete
-
-            // Find the favorite to get the user_id
-            const favorite = await favoriteDao.findFavoriteByUserId(id);
-            if (!favorite) {
+            const { id } = req.params;
+            console.log(id)
+            const deletedFavorite = await favoriteDao.findFavoriteById(id);
+            if (!deletedFavorite) {
                 return res.status(404).json({
                     message: "Favorite not found"
                 });
             }
-
-            // Remove favorite ID from the user's favorite_ids array
-            await favoriteDao.removeFromUserFavorites(favorite.user_id, id);
-
-            // Delete the favorite itself
+            console.log(deletedFavorite)
+            await userDao.removeFromUserFavorites(deletedFavorite.user_id, id);
             await favoriteDao.deleteFavorite(id);
 
             res.status(200).json({
