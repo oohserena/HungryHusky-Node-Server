@@ -48,8 +48,20 @@ function FavoritesRoutes(app) {
         }
     };
 
+    const findFavoritesByUserId = async (req, res) => {
+        try {
+            const userId = req.params.userId;
+            const favorites = await favoriteDao.findFavoriteByUserId(userId);
+            res.json(favorites);
+
+        } catch (error) {
+            console.error(error);
+            res.status(500).send({message: error.message});
+        }
+    }
     app.post("/api/favorites", createFavorite);
     app.delete("/api/favorites/:id", deleteFavorite);
+    app.get("/api/users/:userId/favorites", findFavoritesByUserId);
 }
 
 export default FavoritesRoutes;
