@@ -32,48 +32,59 @@ function ReviewRoutes(app) {
             // console.log(id)
             // console.log(deletedReview.user_id)
 
-            await userDao.removeFromUserReviews(deletedReview.user_id, id);
-            await reviewDao.deleteReview(id);
 
-            res.status(200).json({
-                message: "Review successfully deleted"
-            });
+  const deleteReviewById = async (req, res) => {
+    try {
+      const { reviewId } = req.params;
 
-        } catch (error) {
-            res.status(500).json({
-                message: error.message
-            });
-        }
-    };
+      const deletedReview = await reviewDao.findReviewById(reviewId);
+      if (!deletedReview) {
+        return res.status(404).json({
+          message: "Review not found",
+        });
+      }
 
-    const findAllReviews = async (req, res) => {
+      await userDao.removeFromUserReviews(deletedReview.user_id, reviewId);
+      await reviewDao.deleteReview(reviewId);
+
+      res.status(200).json({
+        message: "Review successfully deleted",
+      });
+    } catch (error) {
+      res.status(500).json({
+        message: error.message,
+      });
+    }
+  };
+          
+  const findAllReviews = async (req, res) => {
         const reviews = await reviewDao.findAllReviews();
         res.json(reviews);
-    }
+   };
 
-    const findReviewsByUserId = async (req, res) => {
-        try {
-            const userId = req.params.userId;
-            console.log(userId)
-            const reviews = await reviewDao.findReviewsByUserId(userId);
-            res.json(reviews);
-            console.log(reviews)
-        } catch (error) {
-            console.error(error);
-            res.status(500).send({message: error.message});
-        }
-    };
+  const findReviewsByUserId = async (req, res) => {
+      try {
+          const userId = req.params.userId;
+          console.log(userId)
+          const reviews = await reviewDao.findReviewsByUserId(userId);
+          res.json(reviews);
+          console.log(reviews)
+      } catch (error) {
+          console.error(error);
+          res.status(500).send({message: error.message});
+      }
+  };
 
-    const findReviewsByRestaurantId = async (req, res) => {
-        try {
-            const restaurantId = req.params.restaurantId;
-            const reviews = await reviewDao.findReviewsByRestaurantId(restaurantId);
-            res.json(reviews);
-            console.log(reviews)
-        } catch (error) {
-            console.error(error);
-            res.status(500).send({message: error.message});
-        }
+  const findReviewsByRestaurantId = async (req, res) => {
+      try {
+          const restaurantId = req.params.restaurantId;
+          const reviews = await reviewDao.findReviewsByRestaurantId(restaurantId);
+          res.json(reviews);
+          console.log(reviews)
+      } catch (error) {
+          console.error(error);
+          res.status(500).send({message: error.message});
+      }
     }
 
 
