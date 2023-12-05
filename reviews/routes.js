@@ -10,7 +10,6 @@ function ReviewRoutes(app) {
                 restaurant_id: req.body.restaurant_id,
                 content: req.body.content,
             });
-            console.log(newReview._id)
             await userDao.addToUserReviews(req.body.user_id, newReview._id);
             res.status(201).json(newReview);
         } catch (error) {
@@ -21,15 +20,17 @@ function ReviewRoutes(app) {
     const deleteReviewById = async (req, res) => {
         try {
             const { id } = req.params;
+            // console.log(id)
             const deletedReview = await reviewDao.findReviewById(id);
+            // console.log(deletedReview)
             if (!deletedReview) {
                 return res.status(404).json({
-                    message: "Favorite not found"
+                    message: "Review not found"
                 });
             }
-            console.log(deletedReview)
-            console.log(id)
-            console.log(deletedReview.user_id)
+            // console.log(deletedReview)
+            // console.log(id)
+            // console.log(deletedReview.user_id)
 
             await userDao.removeFromUserReviews(deletedReview.user_id, id);
             await reviewDao.deleteReview(id);
@@ -63,11 +64,24 @@ function ReviewRoutes(app) {
         }
     };
 
+    const findReviewsByRestaurantId = async (req, res) => {
+        try {
+            const restaurantId = req.params.restaurantId;
+            const reviews = await reviewDao.findReviewsByRestaurantId(restaurantId);
+            res.json(reviews);
+            console.log(reviews)
+        } catch (error) {
+            console.error(error);
+            res.status(500).send({message: error.message});
+        }
+    }
+
 
     app.post("/api/reviews", createReview);
-    app.delete("/api/reviews/:reviewId", deleteReviewById);
+    app.delete("/api/reviews/:id", deleteReviewById);
     app.get("/api/reviews", findAllReviews);
     app.get("/api/users/:userId/review", findReviewsByUserId);
+    app.get("/api/restaurants/:restaurantId/review", findReviewsByRestaurantId);
 
 
 }

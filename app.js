@@ -7,6 +7,7 @@ import UserRoutes from "./users/routes.js";
 import SearchRoutes from "./search/routes.js";
 import FavoritesRoutes from "./favorites/routes.js";
 import ReviewRoutes from "./reviews/routes.js";
+import RatingRoutes from "./rating/routes.js";
 
 // mongoose.connect("mongodb://127.0.0.1:27017/kanbas");
 const CONNECTION_STRING =
@@ -43,5 +44,6 @@ UserRoutes(app);
 SearchRoutes(app);
 FavoritesRoutes(app);
 ReviewRoutes(app);
+RatingRoutes(app);
 
 app.listen(process.env.PORT || 4000);

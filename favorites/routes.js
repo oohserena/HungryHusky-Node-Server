@@ -55,9 +55,30 @@ function FavoritesRoutes(app) {
             res.status(500).send({message: error.message});
         }
     }
+
+    const findFavoriteByRestaurantId = async (req, res) => {
+        try{
+            const resaurantId = req.params.restaurantId;
+            const favorites = await favoriteDao.findFavoriteByRestaurantId(resaurantId);
+            res.json(favorites);   
+        }  catch (error) {
+            console.error(error);
+            res.status(500).send({message: error.message});
+        }
+    } 
+
+    // const getFavoriteCounts = async (req, res) => {
+    //     try{
+
+    //     }
+    // }
+
     app.post("/api/favorites", createFavorite);
     app.delete("/api/favorites/:id", deleteFavorite);
     app.get("/api/users/:userId/favorites", findFavoritesByUserId);
+    app.get("/api/restaurants/:restaurantId/favorites", findFavoriteByRestaurantId);
+
+
 }
 
 export default FavoritesRoutes;
