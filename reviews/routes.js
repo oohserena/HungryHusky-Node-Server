@@ -94,6 +94,7 @@ function ReviewRoutes(app) {
         app.get("/api/reviews", findAllReviews);
         app.get("/api/users/:userId/review", findReviewsByUserId);
         app.get("/api/restaurants/:restaurantId/review", findReviewsByRestaurantId);
+
 }
 
 export default ReviewRoutes;
