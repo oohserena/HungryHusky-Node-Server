@@ -13,4 +13,12 @@ export const findFavoriteByUserId = (userId) => {
             throw error; 
         });
 };
+export const findFavoriteByRestaurantId = (restaurantId) => {
+    return favoriteModel.find({ restaurant_id: restaurantId})
+        .then(favorites => favorites)
+        .catch(error => {
+            console.error('Error finding reviews by user ID:', error);
+            throw error; 
+        });
+};
 
