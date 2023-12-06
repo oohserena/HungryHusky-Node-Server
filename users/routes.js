@@ -24,17 +24,36 @@ function UserRoutes(app) {
     res.json(status);
   };
 
+  const deleteUser = async (req, res) => {
+    try {
+      const { userId } = req.params;
+      const status = await dao.deleteUser(userId);
+
+      if (status.deletedCount === 0) {
+        res.status(404).json({ error: "User not found" });
+      } else {
+        res.status(200).json({ message: "User successfully deleted" });
+      }
+    } catch (error) {
+      res.status(500).json({ error: "An error occurred while deleting user" });
+    }
+  };
+
   const register = async (req, res) => {
     try {
-        const user = await dao.findUserByEmail(req.body.email);
-        if (user) {
-          return res.status(400).json({ message: "Email already taken, please log in" });
-        }
-        const currentUser = await dao.createUser(req.body);
-        req.session['currentUser'] = currentUser;
-        res.json(currentUser);
+      const user = await dao.findUserByEmail(req.body.email);
+      if (user) {
+        return res
+          .status(400)
+          .json({ message: "Email already taken, please log in" });
+      }
+      const currentUser = await dao.createUser(req.body);
+      req.session["currentUser"] = currentUser;
+      res.json(currentUser);
     } catch (error) {
-      res.status(500).json({ error: 'An error occurred while creating the user.'});
+      res
+        .status(500)
+        .json({ error: "An error occurred while creating the user." });
     }
   };
 
@@ -57,10 +76,10 @@ function UserRoutes(app) {
   const logout = (req, res) => {
     try {
       req.session.destroy();
-      res.status(200).json({ message: 'Successfully signed out.' });
+      res.status(200).json({ message: "Successfully signed out." });
     } catch (error) {
-      console.error('Sign out error:', error);
-      res.status(500).json({ error: 'An error occurred during sign out.' });
+      console.error("Sign out error:", error);
+      res.status(500).json({ error: "An error occurred during sign out." });
     }
   };
 
@@ -80,7 +99,7 @@ function UserRoutes(app) {
   app.post("/api/users/login", login);
   app.post("/api/users", logout);
   app.post("/api/users/profile", account);
-
+  app.delete("/api/users/:userId", deleteUser);
 }
 
 export default UserRoutes;
