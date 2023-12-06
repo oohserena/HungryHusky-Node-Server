@@ -13,7 +13,7 @@ function SearchRoutes(app) {
         .status(400)
         .json({ message: "Both term and location are required." });
     }
-
+    
     try {
       const response = await axios.get(
         "https://api.yelp.com/v3/businesses/search",

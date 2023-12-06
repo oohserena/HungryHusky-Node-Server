@@ -67,17 +67,60 @@ function FavoritesRoutes(app) {
         }
     } 
 
-    // const getFavoriteCounts = async (req, res) => {
-    //     try{
+    const findFoodieFavoritesCount = async (req, res) => {
+        try {
+            const restaurantId = req.params.restaurantId;
+            const favorites = await favoriteDao.findFavoriteByRestaurantId(restaurantId);
+    
+            let foodieFavoritesCount = 0;
+    
+            for (const favorite of favorites) {
+                const userId = favorite.user_id;
+                const userInfo = await userDao.findUserById(userId);
+    
+                if (userInfo && userInfo.role === "FOODIE") {
+                    foodieFavoritesCount += 1;
+                }
+            }
+    
+            // Send the count of foodie favorites in the response
+            res.json({ foodieFavoritesCount: foodieFavoritesCount });
+    
+        } catch (error) {
+            res.status(500).send("Server Error: " + error.message);
+        }
+    }
 
-    //     }
-    // }
-
+    const findAnalyticsFavoritesCount = async (req, res) => {
+        try {
+            const restaurantId = req.params.restaurantId;
+            const favorites = await favoriteDao.findFavoriteByRestaurantId(restaurantId);
+    
+            let analyticsFavoritesCount = 0;
+    
+            for (const favorite of favorites) {
+                const userId = favorite.user_id;
+                const userInfo = await userDao.findUserById(userId);
+    
+                if (userInfo && userInfo.role === "BUSINESS ANALYST") {
+                    analyticsFavoritesCount += 1;
+                }
+            }
+    
+            // Send the count of foodie favorites in the response
+            res.json({ analyticsFavoritesCount: analyticsFavoritesCount });
+    
+        } catch (error) {
+            res.status(500).send("Server Error: " + error.message);
+        }
+    }
+    
     app.post("/api/favorites", createFavorite);
     app.delete("/api/favorites/:id", deleteFavorite);
     app.get("/api/users/:userId/favorites", findFavoritesByUserId);
     app.get("/api/restaurants/:restaurantId/favorites", findFavoriteByRestaurantId);
-
+    app.get("/api/restaurants/:restaurantId/foodieFavoritesCount", findFoodieFavoritesCount);
+    app.get("/api/restaurants/:restaurantId/analyticsFavoritesCount", findAnalyticsFavoritesCount);
 
 }
 
