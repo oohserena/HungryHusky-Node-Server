@@ -21,6 +21,7 @@ function SearchRoutes(app) {
                     term,
                     location,
                     categories: 'ailas',
+                    limit: 8,
                 }
             });
             res.json(response.data.businesses); // Sending back only the list of businesses
