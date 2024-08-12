@@ -9,9 +9,11 @@ import FavoritesRoutes from "./favorites/routes.js";
 import ReviewRoutes from "./reviews/routes.js";
 import RatingRoutes from "./rating/routes.js";
 
+console.log('Server is starting...');
 // mongoose.connect("mongodb://127.0.0.1:27017/kanbas");
-const CONNECTION_STRING =
-  process.env.DB_CONNECTION_STRING || "mongodb://127.0.0.1:27017";
+const CONNECTION_STRING = "mongodb://127.0.0.1:27017";
+// process.env.DB_CONNECTION_STRING;
+//  || "mongodb://127.0.0.1:27017";
 mongoose.connect(CONNECTION_STRING);
 
 const app = express();
@@ -20,7 +22,6 @@ app.use(
   cors({
     credentials: true,
     origin: process.env.FRONTEND_URL,
-    // origin: process.env.FRONTEND_URL || "http://localhost:3000",
   })
 );
 
@@ -47,4 +48,10 @@ FavoritesRoutes(app);
 ReviewRoutes(app);
 RatingRoutes(app);
 
-app.listen(process.env.PORT || 4000);
+try {
+  app.listen(4000, () => {
+    console.log('Server is running on port 3000');
+  });
+} catch (error) {
+  console.error('Error starting the server:', error);
+}

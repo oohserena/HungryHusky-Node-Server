@@ -30,7 +30,7 @@ function FavoritesRoutes(app) {
                     message: "Favorite not found"
                 });
             }
-            console.log(deletedFavorite)
+            // console.log(deletedFavorite)
             await userDao.removeFromUserFavorites(deletedFavorite.user_id, id);
             await favoriteDao.deleteFavorite(id);
 
