@@ -9,10 +9,7 @@
 - [API Endpoints](#api-endpoints)
 - [Architecture](#architecture)
 - [Environment Variables](#environment-variables)
-- [Running Tests](#running-tests)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+
 
 ## Project Overview
 This Node.js server provides a RESTful API for managing user interactions with restaurant data. It integrates with the Yelp API to allow users to search for restaurants, view reviews, add restaurants to their favorites list, and leave reviews. The server also offers analytics on user ratings in Yelp.
