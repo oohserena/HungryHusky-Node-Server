@@ -1,4 +1,4 @@
-# Node.js Server for Hungry Husky Restaurant Review app 
+# Node.js Server for Hungry Husky Restaurant Review App 
 
 
 ## Table of Contents
